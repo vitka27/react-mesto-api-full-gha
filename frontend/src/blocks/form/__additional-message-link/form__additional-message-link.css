@@ -1,0 +1,14 @@
+.form__additional-message-link {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+.form__additional-message-link:hover {
+  opacity: 0.6000000238418579;
+  cursor: pointer;
+}

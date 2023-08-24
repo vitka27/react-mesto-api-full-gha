@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 320px;
+  max-width: 880px;
+  margin: auto;
+  padding: calc(0px + 181 * (100vw - 320px) / 960);
+  padding-top: 0;
+  padding-bottom: 0;
+}

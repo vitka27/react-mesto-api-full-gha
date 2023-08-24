@@ -1,0 +1,19 @@
+.content-user__del{
+  background-image: url(../../../image/button/Trash.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 18px;
+  height: 19px;
+  z-index: 1;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+.content-user__del:hover {
+  opacity: 0.6;
+}

@@ -1,0 +1,14 @@
+.content-user__title {
+  grid-area: title;
+  font-family: inherit;
+  color: black;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  padding-left: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 190px;
+}

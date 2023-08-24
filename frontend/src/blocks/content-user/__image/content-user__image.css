@@ -1,0 +1,8 @@
+.content-user__image {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-height: 282px;
+  width: 100%;
+  height: 100%;
+  grid-area: image;
+}

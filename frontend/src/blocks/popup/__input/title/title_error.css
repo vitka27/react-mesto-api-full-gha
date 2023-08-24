@@ -1,0 +1,10 @@
+.popup__input_title_error{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+.popup__input_title_error:nth-child(2) {
+  padding-bottom: 13px;
+}

@@ -1,0 +1,24 @@
+.profile-user__name {
+  font-family: inherit;
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc((100vw - 320px) / (1280 - 320) * (42 - 27) + 27px);
+  line-height: 48px;
+  max-width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 1281px) {
+  .profile-user__name {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 979px) {
+  .profile-user__name {
+    line-height: 33px;
+    text-align: center;
+    max-width: 220px;
+  }
+}

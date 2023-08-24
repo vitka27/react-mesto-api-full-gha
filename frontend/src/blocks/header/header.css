@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  padding: 48px 0 41px 0;
+  border-bottom: solid 1px rgba(84, 84, 84, 0.7);
+}
+@media screen and (max-width: 1280px) {
+  .header {
+    padding-top: calc((100vw - 320px) / (1280 - 320) * (45 - 28) + 28px);
+    padding-bottom: calc((100vw - 320px) / (1280 - 320) * (41 - 27.6) + 27.6px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding-left: 17px;
+  }
+}

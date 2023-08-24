@@ -1,0 +1,24 @@
+.form__submit {
+  margin: 186px auto 15px;
+  width: 358px;
+  height: 50px;
+  border: 0;
+  border-radius: 2px;
+  padding: 0;
+  background-color: white;
+  color: black;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: opacity 0.4s;
+}
+
+.form__submit:hover {
+  border-radius: 2px;
+  opacity: 0.8500000238418579;
+}

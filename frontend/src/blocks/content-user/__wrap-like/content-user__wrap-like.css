@@ -1,0 +1,10 @@
+.content-user__wrap-like {
+  grid-area: like;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+

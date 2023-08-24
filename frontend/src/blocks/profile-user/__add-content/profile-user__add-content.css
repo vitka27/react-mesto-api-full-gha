@@ -1,0 +1,18 @@
+.profile-user__add-content {
+  background: none;
+  border: none;
+  background-image: url(../../../image/button/add_button.svg);
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  transition: opacity .4s;
+}
+.profile-user__add-content:hover {
+  opacity: 0.6;
+}
+@media screen and (max-width: 768px) {
+    .profile-user__add-content {
+        width: 282px;
+        background-image: url(../../../image/button/big_add_button.svg);
+      }
+}

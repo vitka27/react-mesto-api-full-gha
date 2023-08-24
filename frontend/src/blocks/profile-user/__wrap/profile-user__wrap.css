@@ -1,0 +1,10 @@
+.profile-user__wrap {
+  display: flex;
+}
+@media screen and (max-width: 979px) {
+    .profile-user__wrap {
+        position: relative;
+        padding-bottom: 10px;
+        margin: auto;
+      }
+}

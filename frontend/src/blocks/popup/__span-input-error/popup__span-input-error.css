@@ -1,0 +1,14 @@
+.popup__span-input-error{
+  min-height: 30px;
+  width: 358px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+@media screen and (max-width: 768px) {
+  .popup__span-input-error {
+    max-width: 238px;
+  }
+}

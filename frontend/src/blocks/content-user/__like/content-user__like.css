@@ -1,0 +1,15 @@
+.content-user__like {
+  background-image: url(../../../image/button/like.svg);
+  background-repeat: no-repeat;
+  background-color: white;
+  border: none;
+  width: 22px;
+  height: 19px;
+  cursor: pointer;
+  transition: opacity 0.4s;
+  padding: 0;
+  align-items: end;
+}
+.content-user__like:hover {
+  opacity: 0.5;
+}
