@@ -38,7 +38,7 @@ module.exports.createUser = (req, res, next) => {
 module.exports.findUser = (req, res, next) => {
   User.findById(req.params.userId)
     .orFail(() => { throw new Error('NotFound'); })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch((error) => {
       if (error.name === 'CastError') {
         next(new BadRequest('Передан несуществующий id пользователя'));
@@ -53,7 +53,7 @@ module.exports.findUser = (req, res, next) => {
 // возвращает информацию полььзователя о своем профиле
 module.exports.findMe = (req, res, next) => {
   User.findById(req.user._id)
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch((next));
 };
 
@@ -65,7 +65,7 @@ module.exports.updateMeProfile = (req, res, next) => {
     { new: true, runValidators: true },
   )
     .orFail(() => { throw new Error('NotFound'); })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch((error) => {
       if (error.name === 'ValidationError') {
         next(new BadRequest('Переданы некорректные данные при обновлении профиля'));
@@ -86,7 +86,7 @@ module.exports.updateMeAvatar = (req, res, next) => {
     { new: true, runValidators: true },
   )
     .orFail(() => { throw new Error('NotFound'); })
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch((error) => {
       if (error.name === 'ValidationError') {
         next(new BadRequest('Переданы некорректные данные при обновлении аватара'));

@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const cors = require('cors');
 
 const { errors } = require('celebrate');
 const errorHendler = require('./middlewares/errorHendler');
 const routes = require('./routes/index');
 
-const { PORT = 3000, MONGO_URI = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 3003, MONGO_URI = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const mongoConfig = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -22,6 +23,7 @@ const limiter = rateLimit({
 });
 
 const app = express();
+app.use(cors());
 
 app.use(limiter);
 

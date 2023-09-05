@@ -48,6 +48,8 @@ function App() {
 
   const navigate = useNavigate();
 
+  const localToken = localStorage.token;
+
   //* Authentication
   //* register
   function hadleSubmitRegister(data) {
@@ -87,14 +89,13 @@ function App() {
 
   //*checkToken
   function checkToken() {
-    const localToken = localStorage.token;
     if (localToken) {
       apiAuth
         .checkToken(localToken)
         .then((response) => {
-          if (response.data.email) {
+          if (response.email) {
             setIsAuthorezed(true);
-            setEmail(response.data.email);
+            setEmail(response.email);
           }
         })
         .catch((error) => console.error(`Ошибка: ${error}`))
@@ -148,7 +149,7 @@ function App() {
 
   //* init render card, user-prof
   useEffect(() => {
-    Promise.all([api.getUser(), api.getCards()])
+    Promise.all([api.getUser(localToken), api.getCards(localToken)])
       .then(([dataUser, dataCards]) => {
         setCurrentUser(dataUser);
         setCard(dataCards);
@@ -160,7 +161,7 @@ function App() {
   //* update user-info (name, about)
   function handleUpdateUser(data) {
     api
-      .setUserInfo(data)
+      .setUserInfo(data, localToken)
       .then((dataUser) => setCurrentUser(dataUser) && closeAllPopups())
       .catch((error) => console.error(`Ошибка: ${error}`));
   }
@@ -168,7 +169,7 @@ function App() {
   //* onUpdataAvatar
   function handleUpdateAvatar(urlImage) {
     api
-      .setUserAvatar(urlImage)
+      .setUserAvatar(urlImage, localToken)
       .then((result) => {
         setCurrentUser(result);
         closeAllPopups();
@@ -179,7 +180,7 @@ function App() {
   //* AddPlace
   function handleAddPlace(newCard) {
     api
-      .setCardData(newCard)
+      .setCardData(newCard, localToken)
       .then((card) => {
         setCard([card, ...cards]);
         closeAllPopups();
@@ -192,7 +193,7 @@ function App() {
     const isLiked = card.likes.some((like) => like._id === dataUser._id);
 
     api
-      .changeLikeCardStatus(card._id, !isLiked)
+      .changeLikeCardStatus(card._id, !isLiked, localToken)
       .then((newCard) => {
         setCard((state) =>
           state.map((c) => (c._id === card._id ? newCard : c))
@@ -210,7 +211,7 @@ function App() {
   function submitCardDelete(event) {
     event.preventDefault();
     api
-      .delPost(selectedDeleteCard)
+      .delPost(selectedDeleteCard, localToken)
       .then(() => {
         setCard((prevStrate) =>
           prevStrate.filter((item) => item._id !== selectedDeleteCard)

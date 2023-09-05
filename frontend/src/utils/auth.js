@@ -30,14 +30,14 @@ class ApiAuthentication {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
       headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}`,
+        authorization: `Bearer ${localToken}`,
       },
     }).then((response) => this._checkResponse(response));
   }
 }
 
 const apiAuth = new ApiAuthentication({
-  baseUrl: "https://auth.nomoreparties.co",
+  baseUrl: "http://localhost:3003",
   headers: {
     "Content-Type": "application/json",
   },
