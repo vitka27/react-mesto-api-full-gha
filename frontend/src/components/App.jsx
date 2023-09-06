@@ -72,8 +72,8 @@ function App() {
       .authorize(data)
       .then(({ token }) => {
         token && localStorage.setItem("token", token);
-        setIsAuthorezed(true);
         checkToken();
+        setIsAuthorezed(true);
       })
       .catch((error) => {
         console.error(`Ошибка: ${error}`);
@@ -102,7 +102,7 @@ function App() {
         .finally(() => navigate("/"));
     }
   }
-  useEffect(checkToken, []);
+  useEffect(checkToken, [localToken]);
 
   //* closeALLpopups
   function closeAllPopups() {
@@ -149,14 +149,14 @@ function App() {
 
   //* init render card, user-prof
   useEffect(() => {
-    Promise.all([api.getUser(localToken), api.getCards(localStorage.token)])
+    Promise.all([api.getUser(localToken), api.getCards(localToken)])
       .then(([dataUser, dataCards]) => {
         setCurrentUser(dataUser);
         setCard(dataCards);
         setIsLoading(false);
       })
       .catch((error) => console.error(`Ошибка: ${error}`));
-  }, []);
+  }, [localToken]);
 
   //* update user-info (name, about)
   function handleUpdateUser(data) {
@@ -190,7 +190,7 @@ function App() {
 
   //* handleCardLike
   function handleCardLike(card, dataUser) {
-    const isLiked = card.likes.some((like) => like._id === dataUser._id);
+    const isLiked = card.likes.some((likeId) => likeId === dataUser._id);
 
     api
       .changeLikeCardStatus(card._id, !isLiked, localToken)

@@ -49,7 +49,7 @@ module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
   { new: true },
 )
   .orFail(() => { throw new Error('NotFound'); })
-  .then((card) => res.send({ data: card }))
+  .then((card) => res.send(card))
   .catch((error) => {
     if (error.name === 'CastError') {
       next(new BadRequest('Переданы некорректные данные для постановки лайка'));
@@ -67,7 +67,7 @@ module.exports.dislikeCard = (req, res, next) => Card.findByIdAndUpdate(
   { new: true },
 )
   .orFail(() => { throw new Error('NotFound'); })
-  .then((card) => res.send({ data: card }))
+  .then((card) => res.send(card))
   .catch((error) => {
     if (error.name === 'CastError') {
       next(new BadRequest('Переданы некорректные данные для снятия лайка'));
