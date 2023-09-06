@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 const { Unauthorized } = require('../errors/index');
 
 const { PRIVATE_KEY = 'mesto' } = process.env;
-console.log(PRIVATE_KEY);
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
