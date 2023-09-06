@@ -11,7 +11,7 @@ module.exports.findAllCard = (req, res, next) => {
 // создаем карточку
 module.exports.createCard = (req, res, next) => {
   Card.create({ owner: req.user._id, ...req.body })
-    .then((card) => res.status(201).send({ data: card }))
+    .then((card) => res.status(201).send(card))
     .catch((error) => {
       if (error.name === 'ValidationError') {
         next(new BadRequest('Переданы некорректные данные при создании карточки'));

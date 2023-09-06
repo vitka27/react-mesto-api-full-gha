@@ -15,6 +15,7 @@ export default function Main({
   cards,
 }) {
   const dataUser = useContext(CurrentUserContext);
+  console.log(cards);
 
   return (
     <main className="main">

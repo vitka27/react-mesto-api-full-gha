@@ -149,7 +149,7 @@ function App() {
 
   //* init render card, user-prof
   useEffect(() => {
-    Promise.all([api.getUser(localToken), api.getCards(localToken)])
+    Promise.all([api.getUser(localToken), api.getCards(localStorage.token)])
       .then(([dataUser, dataCards]) => {
         setCurrentUser(dataUser);
         setCard(dataCards);
