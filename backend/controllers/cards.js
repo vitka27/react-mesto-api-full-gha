@@ -3,7 +3,7 @@ const { BadRequest, NotFound, Forbidden } = require('../errors/index');
 
 // выводим список карточек
 module.exports.findAllCard = (req, res, next) => {
-  Card.find({})
+  Card.find({}).sort({ createdAt: '-1' })
     .then((card) => res.send(card))
     .catch(next);
 };
