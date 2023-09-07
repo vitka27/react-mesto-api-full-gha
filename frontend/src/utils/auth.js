@@ -37,7 +37,7 @@ class ApiAuthentication {
 }
 
 const apiAuth = new ApiAuthentication({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.amg.nomoredomainsicu.ru",
   headers: {
     "Content-Type": "application/json",
   },
