@@ -13,4 +13,5 @@ IP 158.160.119.254
 
 Frontend https://amg.nomoredomainsicu.ru
 
-Backend https://amg.nomoredomainsicu.ru
+Backend https://api.amg.nomoredomainsicu.ru
+
