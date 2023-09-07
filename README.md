@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес https://158.160.119.254
+IP 158.160.119.254
 
 Frontend https://amg.nomoredomainsicu.ru
 
